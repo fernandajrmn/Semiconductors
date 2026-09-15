@@ -1,0 +1,70 @@
+# Synopsys VCS
+
+simv
+
+simv.*
+
+simv.daidir/
+
+csrc/
+
+*.daidir/
+
+ucli.key
+
+
+
+# VCS libraries / databases
+
+*.DB/
+
+AN.DB/
+
+.vcs_lib_*
+
+.vcs_*
+
+
+
+# VPD / waveform files
+
+*.vpd
+
+*.vcd
+
+*.fsdb
+
+
+
+# Verdi
+
+verdiLog/
+
+verdi_config_file
+
+novas.*
+
+novas_dump.log
+
+
+
+# DVE
+
+DVEfiles/
+
+
+
+# Logs
+
+*.log
+
+
+
+# Temporary files
+
+*.tmp
+
+*.swp
+
+*~
+sysProgressP.conf
