@@ -1,20 +1,20 @@
 module SISO(
 	input logic clk,
-	input logic load,
-	input logic [7:0]leds,
-	input logic [7:0]datain,
-	output logic [7:0]dataout
+	input logic datain,
+	input logic reset,
+	output logic dataout
 );
 
-logic [6:0]shifted_data;
+logic [7:0]shifted_data;
 
-always_ff(@posedge clk)
+always @(posedge clk or posedge reset)
 	begin
-		dataout = {[]
-	
-		
-
+		if (reset)
+			shifted_data <= 8'b0;
+		else
+			shifted_data <= {datain, shifted_data[7:1]};
 	end
 
+assign dataout=shifted_data[0];
 
 endmodule
