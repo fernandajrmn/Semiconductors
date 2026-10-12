@@ -1,3 +1,131 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import numpy as np
+
+WIDTH = 256
+HEIGHT = 256
+
+
+def load_raw(filename):
+    image = np.fromfile(filename, dtype=np.uint8)
+
+    expected = WIDTH * HEIGHT
+    if image.size != expected:
+        raise ValueError(
+            f"{filename}: expected {expected} pixels "
+            f"({WIDTH}x{HEIGHT}), but found {image.size}."
+        )
+
+    return image.reshape((HEIGHT, WIDTH))
+
+
+def load_pgm(filename):
+    with open(filename, "rb") as f:
+        magic = f.readline().strip()
+
+        if magic not in (b"P2", b"P5"):
+            raise ValueError(f"{filename}: unsupported PGM format {magic!r}")
+
+        header_tokens = []
+
+        while len(header_tokens) < 3:
+            line = f.readline()
+
+            if not line:
+                raise ValueError(f"{filename}: incomplete PGM header.")
+
+            line = line.split(b"#", 1)[0]
+            header_tokens.extend(line.split())
+
+        width = int(header_tokens[0])
+        height = int(header_tokens[1])
+        max_value = int(header_tokens[2])
+
+        if width != WIDTH or height != HEIGHT:
+            raise ValueError(
+                f"{filename}: image is {width}x{height}, "
+                f"expected {WIDTH}x{HEIGHT}."
+            )
+
+        if max_value > 255:
+            raise ValueError(
+                f"{filename}: max value is {max_value}; "
+                "this script expects 8-bit pixels."
+            )
+
+        if magic == b"P2":
+            rest = f.read().decode("ascii")
+            tokens = []
+
+            for line in rest.splitlines():
+                line = line.split("#", 1)[0]
+                tokens.extend(line.split())
+
+            pixels = np.array([int(x) for x in tokens], dtype=np.uint8)
+
+        else:
+            pixels = np.frombuffer(f.read(), dtype=np.uint8)
+
+        expected = WIDTH * HEIGHT
+
+        if pixels.size < expected:
+            raise ValueError(
+                f"{filename}: expected {expected} pixels, "
+                f"but found {pixels.size}."
+            )
+
+        return pixels[:expected].reshape((HEIGHT, WIDTH))
+
+
+def load_image(filename):
+    extension = os.path.splitext(filename)[1].lower()
+
+    if extension == ".raw":
+        return load_raw(filename)
+
+    if extension == ".pgm":
+        return load_pgm(filename)
+
+    if extension in (".png", ".jpg", ".jpeg", ".bmp"):
+        try:
+            import cv2
+        except ImportError:
+            raise RuntimeError(
+                f"{filename}: OpenCV is needed to read {extension} files. "
+                "Use a .raw or .pgm version instead."
+            )
+
+        image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
+
+        if image is None:
+            raise ValueError(f"Could not open {filename}.")
+
+        if image.shape != (HEIGHT, WIDTH):
+            raise ValueError(
+                f"{filename}: image is {image.shape[1]}x{image.shape[0]}, "
+                f"expected {WIDTH}x{HEIGHT}."
+            )
+
+        return image
+
+    raise ValueError(
+        f"{filename}: unsupported extension '{extension}'. "
+        "Supported: .raw, .pgm, .png, .jpg, .jpeg, .bmp"
+    )
+
+
+def compare_images(name_a, image_a, name_b, image_b):
+    differences = np.abs(
+        image_a.astype(np.int16) -
+        image_b.astype(np.int16)
+    )
+
+    different_mask = differences != 0
+    different_pixels = int(np.count_nonzero(different_mask))
+    max_difference = int(differences.max())
+    mean_difference = float(differences.mean())
 
     print()
     print("=" * 68)
