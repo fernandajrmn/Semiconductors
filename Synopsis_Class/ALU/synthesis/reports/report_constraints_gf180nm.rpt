@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : ALU_Top
+Version: X-2025.06-SP1
+Date   : Wed Nov 11 19:19:40 2026
+****************************************
+
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   ALU_Top                      0.00           0.05          -0.05  (VIOLATED)
+
+
+1

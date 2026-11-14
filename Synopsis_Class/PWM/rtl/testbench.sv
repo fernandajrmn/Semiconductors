@@ -25,8 +25,8 @@ module PWM_tb;
 
 
     initial begin
-        $dumpfile("dump.vcd");
-        $dumpvars(0, PWM_tb);
+				$fsdbDumpfile("inter.fsdb");
+				$fsdbDumpvars(0, PWM_tb);
     end
 
 

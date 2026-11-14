@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : PWM
+Version: X-2025.06-SP1
+Date   : Wed Nov 11 19:30:15 2026
+****************************************
+
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   PWM                          0.00           0.01          -0.01  (VIOLATED)
+
+
+1

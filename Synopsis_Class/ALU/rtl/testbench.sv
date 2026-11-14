@@ -20,7 +20,13 @@ module ALU_top_tb;
     // Clock
     initial clk = 0;
     always #5 clk = ~clk;
+		
 
+	initial
+	begin
+		$fsdbDumpfile("inter.fsdb");
+		$fsdbDumpvars(0, ALU_top_tb);
+	end
 
     initial begin
 

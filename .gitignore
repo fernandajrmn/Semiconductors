@@ -1,70 +1,87 @@
+
+# ============================
 # Synopsys VCS
-
+# ============================
 simv
-
 simv.*
-
 simv.daidir/
-
 csrc/
-
 *.daidir/
-
+work.lib++/
+*.vdb/
 ucli.key
-
-
+vc_hdrs.h
 
 # VCS libraries / databases
-
 *.DB/
-
 AN.DB/
-
 .vcs_lib_*
-
 .vcs_*
 
-
-
-# VPD / waveform files
-
+# Waveforms
 *.vpd
-
 *.vcd
-
 *.fsdb
+*.fsdb.*
+*.vpd.*
+*.vcd.*
 
-
-
-# Verdi
-
+# Verdi temporary files
 verdiLog/
-
 verdi_config_file
-
 novas.*
-
 novas_dump.log
 
-
-
 # DVE
-
 DVEfiles/
 
+# Coverage
+urgReport/
 
-
-# Logs
-
+# Logs and temporary files
 *.log
-
-
-
-# Temporary files
-
 *.tmp
-
 *.swp
-
 *~
 sysProgressP.conf
+
+
+
+# ============================
+# Synopsys Design Compiler
+# ============================
+
+# Librerias compiladas temporales
+**/synthesis/alib-*/
+
+# Checksums
+**/synthesis/cksum_dir/
+
+# Archivos auxiliares de elaboracion
+**/synthesis/*.mr
+**/synthesis/*-verilog.pvl
+**/synthesis/*-verilog.syn
+
+# Informacion de verificacion formal
+# Quitar esta regla si usamos Formality
+**/synthesis/default.svf
+
+# ============================
+# CONSERVAR EN GIT
+# ============================
+# *.rpt  - Reportes de sintesis
+# *.tcl  - Scripts de sintesis
+# *.sdc  - Constraints
+# *.ddc  - Diseno compilado
+# *.v    - Netlists sintetizadas
+# *.rc   - Configuracion de Verdi
+
+
+# ============================
+# Files we DO want in Git
+# ============================
+# SystemVerilog (.sv, .svh)
+# Makefile
+# Verdi waveform configuration (.rc)
+# Synthesis scripts (.tcl)
+# Timing constraints (.sdc)

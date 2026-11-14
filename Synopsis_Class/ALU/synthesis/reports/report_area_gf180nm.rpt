@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : ALU_Top
+Version: X-2025.06-SP1
+Date   : Wed Nov 11 19:19:40 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80 (File: /srv/shared_directory/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/db/gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80.db)
+
+Number of ports:                         2626
+Number of nets:                          5520
+Number of cells:                         3783
+Number of combinational cells:           3724
+Number of sequential cells:                16
+Number of macros/black boxes:               0
+Number of buf/inv:                        600
+Number of references:                       5
+
+Combinational area:              57804.005558
+Buf/Inv area:                     5659.225513
+Noncombinational area:            1194.188843
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 58998.194401
+Total area:                 undefined
+1

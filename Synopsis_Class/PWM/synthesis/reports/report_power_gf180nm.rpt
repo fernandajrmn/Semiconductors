@@ -1,0 +1,57 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : PWM
+Version: X-2025.06-SP1
+Date   : Wed Nov 11 19:30:15 2026
+****************************************
+
+
+Library(s) Used:
+
+    gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80 (File: /srv/shared_directory/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/db/gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80.db)
+
+
+Operating Conditions: gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80   Library: gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1uW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =  53.0929 uW   (60%)
+  Net Switching Power  =  36.0229 uW   (40%)
+                         ---------
+Total Dynamic Power    =  89.1158 uW  (100%)
+
+Cell Leakage Power     =  11.4232 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  1.3536e-02            0.0000            0.0000        1.3536e-02  (  15.19%)  i
+register       1.9608e-04        8.5166e-05        1.1888e-03        2.8244e-04  (   0.32%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  3.9361e-02        3.5938e-02        1.0215e-02        7.5309e-02  (  84.50%)
+--------------------------------------------------------------------------------------------------
+Total          5.3093e-02 mW     3.6023e-02 mW     1.1404e-02 uW     8.9127e-02 mW
+1

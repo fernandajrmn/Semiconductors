@@ -1,0 +1,116 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PWM
+Version: X-2025.06-SP1
+Date   : Wed Nov 11 19:30:15 2026
+****************************************
+
+Operating Conditions: gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80   Library: gf180mcu_fd_sc_mcu7t5v0__tt_025C_1v80
+Wire Load Model Mode: top
+
+  Startpoint: duty_cycle[0]
+              (input port clocked by clk)
+  Endpoint: pwm (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             8.00       8.00
+  input external delay                                    5.00      13.00 f
+  duty_cycle[0] (in)                                      0.00      13.00 f
+  DP_OP_15_122_8448/I2[0] (PWM_DP_OP_15_122_8448_1)       0.00      13.00 f
+  DP_OP_15_122_8448/U229/ZN (gf180mcu_fd_sc_mcu7t5v0__inv_1)
+                                                          5.29      18.29 r
+  DP_OP_15_122_8448/U150/ZN (gf180mcu_fd_sc_mcu7t5v0__nor2_1)
+                                                          0.84      19.13 f
+  DP_OP_15_122_8448/U86/CO (gf180mcu_fd_sc_mcu7t5v0__addh_1)
+                                                          1.72      20.85 f
+  DP_OP_15_122_8448/U84/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.68      23.52 f
+  DP_OP_15_122_8448/U81/S (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.90      26.42 f
+  DP_OP_15_122_8448/U252/Z (gf180mcu_fd_sc_mcu7t5v0__or2_1)
+                                                          1.84      28.26 f
+  DP_OP_15_122_8448/U16/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi21_1)
+                                                          0.81      29.07 r
+  DP_OP_15_122_8448/U212/ZN (gf180mcu_fd_sc_mcu7t5v0__clkinv_1)
+                                                          0.62      29.69 f
+  DP_OP_15_122_8448/U13/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.35      32.04 f
+  DP_OP_15_122_8448/U12/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      34.46 f
+  DP_OP_15_122_8448/U242/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      36.87 f
+  DP_OP_15_122_8448/U10/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      39.29 f
+  DP_OP_15_122_8448/U9/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      41.71 f
+  DP_OP_15_122_8448/U8/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      44.12 f
+  DP_OP_15_122_8448/U7/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      46.54 f
+  DP_OP_15_122_8448/U6/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      48.96 f
+  DP_OP_15_122_8448/U249/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.42      51.37 f
+  DP_OP_15_122_8448/U248/S (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          4.22      55.59 r
+  DP_OP_15_122_8448/O1[14] (PWM_DP_OP_15_122_8448_1)      0.00      55.59 r
+  div_1/u_div/DP_OP_37_123_5779/I1[14] (PWM_DP_OP_37_123_5779_1)
+                                                          0.00      55.59 r
+  div_1/u_div/DP_OP_37_123_5779/U615/ZN (gf180mcu_fd_sc_mcu7t5v0__clkinv_1)
+                                                          1.41      57.00 f
+  div_1/u_div/DP_OP_37_123_5779/U519/CO (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.65      59.65 f
+  div_1/u_div/DP_OP_37_123_5779/U514/S (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          3.36      63.01 r
+  div_1/u_div/DP_OP_37_123_5779/U513/S (gf180mcu_fd_sc_mcu7t5v0__addf_1)
+                                                          2.87      65.88 f
+  div_1/u_div/DP_OP_37_123_5779/U296/ZN (gf180mcu_fd_sc_mcu7t5v0__nor2_1)
+                                                          1.17      67.05 r
+  div_1/u_div/DP_OP_37_123_5779/U293/ZN (gf180mcu_fd_sc_mcu7t5v0__oai21_1)
+                                                          0.57      67.62 f
+  div_1/u_div/DP_OP_37_123_5779/U291/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi21_1)
+                                                          1.78      69.40 r
+  div_1/u_div/DP_OP_37_123_5779/U630/ZN (gf180mcu_fd_sc_mcu7t5v0__inv_1)
+                                                          0.48      69.88 f
+  div_1/u_div/DP_OP_37_123_5779/U265/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi21_1)
+                                                          1.42      71.30 r
+  div_1/u_div/DP_OP_37_123_5779/U245/ZN (gf180mcu_fd_sc_mcu7t5v0__oai21_1)
+                                                          0.96      72.26 f
+  div_1/u_div/DP_OP_37_123_5779/U225/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi21_1)
+                                                          1.17      73.42 r
+  div_1/u_div/DP_OP_37_123_5779/U633/Z (gf180mcu_fd_sc_mcu7t5v0__xor2_1)
+                                                          1.42      74.84 r
+  div_1/u_div/DP_OP_37_123_5779/O1[29] (PWM_DP_OP_37_123_5779_1)
+                                                          0.00      74.84 r
+  U86/ZN (gf180mcu_fd_sc_mcu7t5v0__clkinv_1)              0.59      75.44 f
+  U87/ZN (gf180mcu_fd_sc_mcu7t5v0__nor2_1)                1.10      76.54 r
+  U90/ZN (gf180mcu_fd_sc_mcu7t5v0__nor2_1)                0.58      77.11 f
+  U91/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi22_1)               1.37      78.48 r
+  U98/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi221_1)              0.94      79.42 f
+  U99/ZN (gf180mcu_fd_sc_mcu7t5v0__oai222_1)              2.16      81.58 r
+  U100/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi221_1)             0.76      82.34 f
+  U66/ZN (gf180mcu_fd_sc_mcu7t5v0__aoi211_1)              5.66      88.00 r
+  pwm (out)                                               0.00      88.00 r
+  data arrival time                                                 88.00
+
+  clock clk (rise edge)                                 100.00     100.00
+  clock network delay (ideal)                             8.00     108.00
+  clock uncertainty                                     -10.00      98.00
+  output external delay                                  -5.00      93.00
+  data required time                                                93.00
+  --------------------------------------------------------------------------
+  data required time                                                93.00
+  data arrival time                                                -88.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                        5.00
+
+
+1
